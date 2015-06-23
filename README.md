@@ -1,4 +1,4 @@
-oort miui telephony
+port miui telephony
 ==================
 
 工具说明：
@@ -25,5 +25,4 @@ oort miui telephony
 
 感谢：
 -------
-感谢smali开源项目
-感谢github上众多朋友的开源代码
+miui合作开发组各位大神的研究
