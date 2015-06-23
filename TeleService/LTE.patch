@@ -1,0 +1,56 @@
+From 172512a10f57c65fd06a905fd8756c4b81257029 Mon Sep 17 00:00:00 2001
+From: wuxianlin <wuxianlinwxl@gmail.com>
+Date: Tue, 23 Jun 2015 13:40:57 +0800
+Subject: [PATCH] Open LTE mi5
+
+---
+ .../smali/com/android/phone/PhoneGlobals.smali     |    2 +-
+ .../PreferredNetworkTypeListPreference.smali       |   16 ++++++++--------
+ 2 files changed, 9 insertions(+), 9 deletions(-)
+
+--- a/TeleService/smali/com/android/phone/PhoneGlobals.smali
++++ b/TeleService/smali/com/android/phone/PhoneGlobals.smali
+@@ -4907,7 +4907,7 @@
+     :cond_f
+     sget-boolean v0, Lmiui/os/Build;->IS_MIFIVE:Z
+ 
+-    if-eqz v0, :cond_11
++    #if-eqz v0, :cond_11
+ 
+     const/16 v2, 0x14
+ 
+--- a/TeleService/smali/com/android/phone/settings/PreferredNetworkTypeListPreference.smali
++++ b/TeleService/smali/com/android/phone/settings/PreferredNetworkTypeListPreference.smali
+@@ -818,21 +818,21 @@
+     :goto_3
+     sget-boolean v3, Lmiui/os/Build;->IS_MIFIVE:Z
+ 
+-    if-nez v3, :cond_c
++    #if-nez v3, :cond_c
+ 
+-    invoke-static {}, Lcom/android/phone/TelephonyCapabilities;->isX5All()Z
++    #invoke-static {}, Lcom/android/phone/TelephonyCapabilities;->isX5All()Z
+ 
+-    move-result v3
++    #move-result v3
+ 
+-    if-nez v3, :cond_c
++    #if-nez v3, :cond_c
+ 
+-    sget-boolean v3, Lmiui/os/Build;->IS_HONGMI_TWOX_CM:Z
++    #sget-boolean v3, Lmiui/os/Build;->IS_HONGMI_TWOX_CM:Z
+ 
+-    if-nez v3, :cond_c
++    #if-nez v3, :cond_c
+ 
+-    sget-boolean v3, Lmiui/os/Build;->IS_HONGMI_THREEX_CM:Z
++    #sget-boolean v3, Lmiui/os/Build;->IS_HONGMI_THREEX_CM:Z
+ 
+-    if-eqz v3, :cond_f
++    #if-eqz v3, :cond_f
+ 
+     :cond_c
+     const v3, 0x7f050029
+-- 
+1.7.9.5
+
