@@ -14,7 +14,7 @@ STOCK_SYSTEM=$PORT_ROOT/stockrom/system
 XMLMERGYTOOL=$PORT_TOOLS/ResValuesModify/jar/ResValuesModify
 GIT_APPLY=$PORT_TOOLS/git.apply
 
-function modify_id{
+function modify_id(){
 folder=$1
 public_old=$2
 public_new=$3
