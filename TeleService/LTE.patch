@@ -1,16 +1,25 @@
-From 79a916b817e6aa414ea9dc341d627ec334717c8a Mon Sep 17 00:00:00 2001
+From 802686d139b703151f0299a16ebfec8562ad6e3b Mon Sep 17 00:00:00 2001
 From: wuxianlin <wuxianlinwxl@gmail.com>
-Date: Sun, 28 Jun 2015 20:54:31 +0800
+Date: Mon, 29 Jun 2015 17:49:22 +0800
 Subject: [PATCH] Open LTE Mi5
 
 ---
- .../smali/com/android/phone/PhoneGlobals.smali     |    2 ++
+ .../smali/com/android/phone/PhoneGlobals.smali     |    4 ++++
  .../PreferredNetworkTypeListPreference.smali       |    2 ++
- 2 files changed, 4 insertions(+)
+ 2 files changed, 6 insertions(+)
 
 --- a/TeleService/smali/com/android/phone/PhoneGlobals.smali
 +++ b/TeleService/smali/com/android/phone/PhoneGlobals.smali
-@@ -4907,6 +4907,8 @@
+@@ -2435,6 +2435,8 @@
+     .local v0, "needReset":Z
+     sget-boolean v3, Lmiui/os/Build;->IS_MIFIVE:Z
+ 
++    const/4 v3, 0x1
++
+     if-eqz v3, :cond_2
+ 
+     if-eqz p1, :cond_1
+@@ -4907,6 +4909,8 @@
      :cond_f
      sget-boolean v0, Lmiui/os/Build;->IS_MIFIVE:Z
  
