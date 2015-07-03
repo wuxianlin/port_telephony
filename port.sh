@@ -26,6 +26,9 @@ $NAME_TO_ID_TOOL $3 $1
 rm -rf $PORT_TEMP
 mkdir $PORT_TEMP
 
+#resources id:16
+$APKTOOL if $XIAOMI_SYSTEM/app/miui.apk
+
 $APKTOOL if -t xiaomi $XIAOMI_SYSTEM/framework/framework-res.apk
 $APKTOOL d -t xiaomi $XIAOMI_SYSTEM/framework/framework-res.apk -o $PORT_TEMP/framework-res_xiaomi
 
