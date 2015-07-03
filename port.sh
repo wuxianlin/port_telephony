@@ -41,6 +41,9 @@ $APKTOOL d $XIAOMI_SYSTEM/framework/framework.jar -o $PORT_TEMP/framework.jar.ou
 modify_id $PORT_TEMP/framework.jar.out $PORT_TEMP/framework-res_xiaomi/res/values/public.xml $PORT_TEMP/framework-res_stock/res/values/public.xml
 mkdir -p $PORT_TEMP/overlay/framework/smali/android/telephony
 cp -r $PORT_TEMP/framework.jar.out/smali/android/telephony/* $PORT_TEMP/overlay/framework/smali/android/telephony
+mkdir -p $PORT_TEMP/overlay/framework/smali/android/net
+cp -r $PORT_TEMP/framework.jar.out/smali/android/net/MobileDataStateTracker* $PORT_TEMP/overlay/framework/smali/android/net/
+cp -r $PORT_TEMP/framework.jar.out/smali/android/net/NetworkIdentity.smali $PORT_TEMP/overlay/framework/smali/android/net/
 
 $APKTOOL d $XIAOMI_SYSTEM/framework/framework2.jar -o $PORT_TEMP/framework2.jar.out
 modify_id $PORT_TEMP/framework2.jar.out $PORT_TEMP/framework-res_xiaomi/res/values/public.xml $PORT_TEMP/framework-res_stock/res/values/public.xml
@@ -72,4 +75,3 @@ $GIT_APPLY $PORT_ROOT/TeleService/LTE.patch
 cd $PORT_ROOT
 #modify TeleService by wuxianlin end
 $APKTOOL b -t stock -a $PORT_TOOLS/aapt $PORT_TEMP/TeleService -o $PORT_TEMP/TeleService.apk
-
